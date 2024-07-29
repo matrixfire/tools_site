@@ -1,0 +1,274 @@
+{% load blog_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section style="border: 0px none;box-sizing:border-box;" data-tplid="92978">
+        <section data-id="us2190801" class="_135editor" style="border: 0px none; box-sizing: border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;">
+                <section class="_135editor" style="background: url(&quot;https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==&quot;) 0% 0% / 100%; padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex;justify-content: space-between;align-items:flex-end;margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.5em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.6em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: rgb(254, 210, 3); color: rgb(255, 255, 255); box-sizing: border-box;">
+                            <section style="padding: 0.5em 10px; font-size: 24px; line-height: 1.5em; letter-spacing: 2px; text-align: justify; box-sizing: border-box;">
+                                <section class="135brush" data-brushtype="text">
+                                    <strong>Chatgpt 最常见的5种提示词技巧</strong>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="_135editor" style="border: 0px none; box-sizing: border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;">
+                <section style="background: url(&quot;https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==&quot;) 0% 0% / 100%; padding-top: 1em; box-sizing: border-box;">
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: #ffffff; color: #fed203; border: 2px solid #fed203; box-sizing: border-box;">
+                            <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 16px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                <strong>分享时间: {% now "Y.m.d" %}</strong>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+<!-- 1 -->
+{% comment %}
+
+        <section data-id="us2211060" class="_135editor" style="border: 0px none;box-sizing:border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                <section style="background: url(https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==);background-size:100%;padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex;justify-content: space-between;align-items:flex-end;margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: #ffffff; border: 2px solid #fed203; color: #fed203; box-sizing: border-box;">
+                            <section style="padding: 1em 10px; box-sizing: border-box;">
+                                <section style="border-radius: 15px; background: #fed203; color: #ffffff; border: 2px solid #fed203; box-sizing: border-box;">
+                                    <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 16px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                        <strong>【{{ post.title }}】</strong>
+                                    </section>
+                                </section>
+                            </section>
+                            {% if post.cover_image %}
+                            <section style="width: 100%; display: flex; align-items: center; padding: 0px 0px 20px; justify-content: space-between;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                                <section style="width: 100px;display: inline-block;margin-left:20px;box-sizing:border-box;">
+                                    <section style="background-position: 50% 50%;width: 100px; height: 100px; margin: 0px auto; border-radius: 100%; background-image: url(&quot;https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlic1Rjd1JLYm9SWDh1MWtNT3hMbkxpY2c3amNBV01KY3k2UTlMUTNOT0Z3MG1Dejh0U2t4b3Y4Zy8w&quot;); background-size: cover;border: 2px solid #fed203;box-sizing:border-box;" data-role="circle">
+                                        <img style="width: 100%; opacity: 0;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="{{ post.cover_image.url }}" data-width="100%" draggable="false" data-ratio="1" data-w="205"/>
+                                    </section>
+                                    
+                                    <section style="margin:0px auto;margin-top: -10px; text-align: center;display: flex;justify-content:center;">
+                                        <section style="display: inline-block;border: 2px #fed203 solid;padding:0px 20px;box-sizing: border-box;border-radius:10px ;color:#fed203;background:#fefefe; z-index:999;">
+                                            <section class="135brush" data-brushtype="text" style="letter-spacing:1px;font-size: 14px;">
+                                                IMAGE NAME
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                                <section style="width: 100%;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                                    <section style="margin-right:20px;">
+                                        <section style="padding: 0.3em 0px; text-align: center; font-size: 14px; line-height: 1.5em; box-sizing: border-box;">
+                                            <strong>个人介绍</strong>
+                                        </section>
+                                        <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 14px; line-height: 1.5em; color: #5f5f5e; box-sizing: border-box;">
+                                            <strong>5年IT + 5年外贸 = AI助力跨境电商</strong><br/>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            {% endif %}
+                            <section style="padding: 0px 10px; margin: -0.6em 0px 1em; color: #454544; font-size: 14px; box-sizing: border-box;">
+                                {% for text in post.key_points %}
+                                <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; box-sizing: border-box;">
+                                    <span style="color: #fed203;font-size:16px;margin-right: 5px;">☑</span>{{ text }}
+                                </section>
+                                {% endfor %}
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        {% endcomment %}
+
+        <section data-id="us2211369" class="_135editor" style="border: 0px none;box-sizing:border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                <section style="background: url(https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==);background-size:100%;padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex;justify-content: space-between;align-items:flex-end;margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: #ffffff; border: 2px solid #fed203; color: #fed203; box-sizing: border-box;">
+                            <section style="padding: 1em 10px; box-sizing: border-box;">
+                                <section style="border-radius: 15px; background: #fed203; color: #ffffff; border: 2px solid #fed203; box-sizing: border-box;">
+                                    <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 16px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                        <strong>【{{ post.title }}】</strong>
+                                    </section>
+                                </section>
+                            </section>
+                            <section style="width: 100%; display: flex; align-items: center; padding: 0px 0px 20px; justify-content: space-between;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                                <section style="width: 100%;box-sizing:border-box;max-width:100% !important;" data-width="100%">
+                                    <section style="margin-right:20px;">
+                                        <section style="padding: 0.3em 0px; text-align: center; font-size: 14px; line-height: 1.5em; box-sizing: border-box;">
+                                            <strong>【个人介绍】</strong>
+                                        </section>
+                                        <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 14px; line-height: 1.5em; color: #5f5f5e; box-sizing: border-box;">
+                                            <strong>5年IT + 5年外贸 = AI助力跨境电商</strong><br/>
+                                        </section>
+                                    </section>
+                                </section>
+                                <section style="width: 100px;display: inline-block;margin-right:20px;box-sizing:border-box;">
+                                    <section style="background-position: 50% 50%;width: 100px; height: 100px; margin: 0px auto; border-radius: 100%; background-image: url(&quot;https://cdn.shopify.com/s/files/1/0632/2939/5192/files/20240718150038.jpg?v=1721292782&quot;); background-size: cover;border: 2px solid #fed203;box-sizing:border-box;" data-role="circle">
+                                        <img style="width: 100%; opacity: 0;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="https://cdn.shopify.com/s/files/1/0632/2939/5192/files/20240718150038.jpg?v=1721292782" data-width="100%" draggable="false" data-ratio="1" data-w="205"/>
+                                    </section>
+                                    <section style="margin:0px auto;margin-top: -10px; text-align: center;display: flex;justify-content:center;">
+                                        <section style="display: inline-block;border: 2px #fed203 solid;padding:0px 20px;box-sizing: border-box;border-radius:10px ;color:#fed203;background:#fefefe; z-index:999;">
+                                            <section class="135brush" data-brushtype="text" style="letter-spacing:1px;font-size: 14px;">
+                                                Bill
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section style="padding: 0px 10px; margin: -0.6em 0px 1em; color: #454544; font-size: 14px; box-sizing: border-box;">
+                                {% for point in post.key_points %}
+                                <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; box-sizing: border-box;">
+                                    <span style="color: #fed203;font-size:16px;margin-right: 5px;">☑</span>{{ point }}
+                                </section>
+                                {% endfor %}
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <section class="_135editor" style="border: 0px none; box-sizing: border-box;">
+            <section style="width: 100%; box-sizing: border-box; max-width: 100% !important;">
+                <section style="background: url('https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==') 0% 0% / 100%; padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px; box-sizing: border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid #fed203; width: 12px; height: 1.6em; background: #ffffff; border-radius: 20px; box-sizing: border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: #ffffff; border: 2px solid #fed203; color: #fed203; box-sizing: border-box;">
+                            <section style="padding: 1em 10px; box-sizing: border-box;">
+                                <section style="border-radius: 15px; background: #fed203; color: #ffffff; border: 2px solid #fed203; box-sizing: border-box;">
+                                    <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 16px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                        <strong>【5种高效技巧】</strong>
+                                    </section>
+                                </section>
+                                <section class="135brush" data-brushtype="text" style="padding: 1em 20px; letter-spacing: 1.5px; line-height: 1.75em; text-align: left; font-size: 14px; color: #3f3f3e; box-sizing: border-box;">
+                                    {% for point in post.key_points %}
+                                        {{ forloop.counter }}. {{ point }}<br/>
+                                    {% endfor %}
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        
+
+
+
+
+        <section class="_135editor" style="border: 0px none; box-sizing: border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;">
+                <section style="background: url(&quot;https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==&quot;) 0% 0% / 100%; padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex;justify-content: space-between;align-items:flex-end;margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.6em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.6em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: rgb(255, 255, 255); border: 2px solid rgb(254, 210, 3); color: rgb(254, 210, 3); box-sizing: border-box;">
+                            <section style="padding: 1em 10px; box-sizing: border-box;">
+                                <section style="border-radius: 15px; background: rgb(254, 210, 3); color: rgb(255, 255, 255); border: 2px solid rgb(254, 210, 3); box-sizing: border-box;">
+                                    <section class="135brush" data-brushtype="text" style="padding: 0.3em 5px; text-align: center; font-size: 16px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                        <strong>【{{ post.title }}】</strong>
+                                    </section>
+                                </section>
+                                <section class="135brush" data-brushtype="text" style="padding: 1em 20px; letter-spacing: 1.5px; line-height: 1.75em; text-align: left; font-size: 14px; color: rgb(63, 63, 62); box-sizing: border-box;">
+                                    <p>{{ post.body|markdown }}</p>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="_135editor" style="border: 0px none; box-sizing: border-box;">
+            <section style="width: 100%;box-sizing:border-box;max-width:100% !important;">
+                <section style="background: url(&quot;https://image2.135editor.com/cache/remote/aHR0cHM6Ly9tbWJpei5xbG9nby5jbi9tbWJpel9wbmcvWVV5WjdBT0wzb2tRRVRqd1hrNmc3STkxRFlvWnhGZGlibmlhVGNqMWs1aWNTbnBvR082dW5WT09RVkhVcFE4NnNaZ1huWnhsNm1iSnJFRUV0YzFydVN2RXcvMA==&quot;) 0% 0% / 100%; padding-top: 1em; box-sizing: border-box;">
+                    <section style="display: flex;justify-content: space-between;align-items:flex-end;margin-bottom: -14px;">
+                        <section style="margin-left: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.5em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                        <section style="margin-right: 4em;">
+                            <section style="border: 2px solid rgb(254, 210, 3); width: 12px; height: 1.6em; background: rgb(255, 255, 255); border-radius: 20px;box-sizing:border-box;"></section>
+                        </section>
+                    </section>
+                    <section style="padding: 0em 10px 1em; box-sizing: border-box;">
+                        <section style="border-radius: 15px; background: rgb(254, 210, 3); color: rgb(255, 255, 255); box-sizing: border-box;">
+                            <section style="display: flex;justify-content:space-between;align-items: center;-webkit-justify-content: space-between;display: -webkit-flex;-webkit-align-items: center;">
+                                <section style="text-align: center;">
+                                    <section style="padding: 1em 22px; font-size: 18px; line-height: 1.5em; letter-spacing: 2px; box-sizing: border-box;">
+                                        <section class="135brush" data-brushtype="text" style="font-size:22px;">
+                                            <strong>限时特价</strong>
+                                        </section>
+                                        <section class="135brush" data-brushtype="text" style="margin-top: 10px;">
+                                            <strong>早鸟票</strong>
+                                        </section>
+                                        <section class="135brush" data-brushtype="text" style="margin-top: 10px;">
+                                            <strong>¥</strong><span style="font-size: 28px;"><strong>0</strong></span><strong>元</strong>
+                                        </section>
+                                    </section>
+                                </section>
+                                <section style="margin-right:1.4em;">
+                                    <section style="width: 100px; padding: 10px 0px;box-sizing:border-box;">
+                                        <img style="width: 100%;display:block;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="https://cdn.shopify.com/s/files/1/0632/2939/5192/files/20240718150606.png?v=1721292782" draggable="false" data-ratio="1" data-w="133"/>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

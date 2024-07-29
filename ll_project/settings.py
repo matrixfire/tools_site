@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # My apps.
     'learning_logs',
     'accounts',
+    'core',
 
     # Third party apps.
     'django_bootstrap5',
