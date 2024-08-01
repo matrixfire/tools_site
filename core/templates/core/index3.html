@@ -87,6 +87,7 @@
 
                 // Construct the base URL properly
                 const baseUrl = "{% url 'core:posts' %}";
+                console.log(baseUrl);
                 // Ensure that the baseUrl is absolute
                 // Get new posts and add posts
                 fetch(`${baseUrl}?start=${start}&end=${end}`)
