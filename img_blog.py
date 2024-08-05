@@ -8,6 +8,10 @@ import textwrap
 import random
 import pyperclip as p
 
+from matplotlib import rcParams
+
+
+
 designer_colors = [
     "#FFC5A6",  # Apricot
     "#FDAC98",  # Melon
@@ -186,9 +190,10 @@ def main():
     add_text_to_image(
         # background_color=(144/255, 238/255, 144/255),  # Light green background color
         background_color=random.choice(designer_colors),  # Light green background color
-        output_path=r"G:\main_work\output_image_matplotlib_{:02d}.jpg",  # Use format string for multiple files
+        output_path=r"C:\Users\34950\Desktop\temp_imgs\output_image_matplotlib_{:02d}.jpg",  # Use format string for multiple files
         rows=rows_,
-        font_path=r'G:\main_work\msyh.ttc'  # Replace with the path to your .ttc or .ttf font file
+        font_path=r"C:\Users\34950\Desktop\work\tools_site\msyh.ttc"  # Replace with the path to your .ttc or .ttf font file
+        # font_path= None  # Replace with the path to your .ttc or .ttf font file
     )
 
 
