@@ -22,8 +22,18 @@ designer_colors = [
     "#FFC8DD",  # Fairy Tale
     "#FFAFCC",  # Carnation Pink
     "#D8F7F2",  # Mint Green
-    "#CDB4DB"   # Thistle
+    "#CDB4DB",  # Thistle
+    "#0033A0",  # Classic Blue
+    "#FF6F61",  # Coral
+    "#50C878",  # Emerald
+    "#40E0D0",  # Turquoise
+    "#36454F",  # Charcoal
+    "#98FF98",  # Mint Green (already included)
+    "#6A0D91",  # Royal Purple
+    "#FFC0CB",  # Blush Pink
+    "#708090"   # Slate Gray
 ]
+
 
 
 
@@ -121,7 +131,8 @@ def add_text_to_image(background_color, output_path, rows, font_path, font_size=
     
     # Split rows into chunks that fit the image height
     for i in range(0, len(rows), max_lines_per_image):
-        chunk = rows[i:i + max_lines_per_image]
+        # chunk = rows[i:i + max_lines_per_image]
+        chunk = [r.strip() for r in rows[i:i + max_lines_per_image]]
         text_chunk = '\n'.join(chunk)
         
         # Add text to the image
@@ -183,7 +194,7 @@ Chinese: 每种类型的人工智能都带来了一些有价值的东西，展�
 
 
 def main():
-    max_line_length = 60
+    max_line_length = 50
     rows_ = wrap_text(p.paste(), max_line_length)
 
     # Example usage with multiple image files
