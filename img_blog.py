@@ -150,8 +150,8 @@ def add_text_to_image(background_color, output_path, rows, font_path, font_size=
         # Save the image
         fig.canvas.draw()
         img = Image.frombytes('RGB', fig.canvas.get_width_height(), fig.canvas.tostring_rgb())
-        file_name = output_path.format(i // max_lines_per_image)
-        img.save()
+        file_name = output_path.format(file_num=i // max_lines_per_image, file_name=rows[0].strip().replace(" ", "-"))
+        img.save(file_name)
         print(f"Image saved to {file_name}")
         
         # Clear the figure for the next chunk
