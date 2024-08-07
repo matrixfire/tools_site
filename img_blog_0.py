@@ -115,10 +115,7 @@ def add_text_to_image(background_color, output_path, rows, font_path, font_size=
         padding (int): Padding from the edges.
     """
     # Load the font
-    # font_prop = font_manager.FontProperties(fname=font_path, size=font_size)
-    font_prop = font_manager.FontProperties(fname=font_path, size=font_size, weight='bold', style='italic')
-    print("fff"*100, font_prop)  # Check the font properties
-    
+    font_prop = font_manager.FontProperties(fname=font_path, size=font_size)
 
     # Create a figure and axis
     fig, ax = plt.subplots(figsize=(10, 12))  # Adjust size as needed
@@ -153,9 +150,8 @@ def add_text_to_image(background_color, output_path, rows, font_path, font_size=
         # Save the image
         fig.canvas.draw()
         img = Image.frombytes('RGB', fig.canvas.get_width_height(), fig.canvas.tostring_rgb())
-        file_name = output_path.format(file_num=i // max_lines_per_image, file_name=rows[0].strip().replace(" ", "-"))
-        img.save(file_name)
-        print(f"Image saved to {file_name}")
+        img.save(output_path.format(i // max_lines_per_image))
+        print(f"Image saved to {output_path.format(i // max_lines_per_image)}")
         
         # Clear the figure for the next chunk
         ax.clear()
@@ -205,9 +201,8 @@ def main():
     add_text_to_image(
         # background_color=(144/255, 238/255, 144/255),  # Light green background color
         background_color=random.choice(designer_colors),  # Light green background color
-
         # output_path=r"C:\Users\34950\Desktop\temp_imgs\output_image_matplotlib_{:02d}.jpg",  # Use format string for multiple files
-        output_path=r"G:\main_work\learning_imgs\{file_name}_{file_num:02d}.jpg",  # Use format string for multiple files
+        output_path=r"G:\main_work\learning_imgs\output_image_matplotlib_{:02d}.jpg",  # Use format string for multiple files
         rows=rows_,
         font_path=r"msyh.ttc"  # Replace with the path to your .ttc or .ttf font file
         # font_path= None  # Replace with the path to your .ttc or .ttf font file
