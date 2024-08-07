@@ -153,7 +153,7 @@ def add_text_to_image(background_color, output_path, rows, font_path, font_size=
         # Save the image
         fig.canvas.draw()
         img = Image.frombytes('RGB', fig.canvas.get_width_height(), fig.canvas.tostring_rgb())
-        file_name = output_path.format(file_num=i // max_lines_per_image, file_name=rows[0].strip().replace(" ", "-"))
+        file_name = output_path.format(file_num=(i // max_lines_per_image) + 1, file_name=rows[0].strip().replace(" ", "-"))
         img.save(file_name)
         print(f"Image saved to {file_name}")
         
@@ -207,7 +207,7 @@ def main():
         background_color=random.choice(designer_colors),  # Light green background color
 
         # output_path=r"C:\Users\34950\Desktop\temp_imgs\output_image_matplotlib_{:02d}.jpg",  # Use format string for multiple files
-        output_path=r"G:\main_work\learning_imgs\{file_name}_{file_num:02d}.jpg",  # Use format string for multiple files
+        output_path=r"temp_files\{file_name}_{file_num:02d}.jpg",  # Use format string for multiple files
         rows=rows_,
         font_path=r"msyh.ttc"  # Replace with the path to your .ttc or .ttf font file
         # font_path= None  # Replace with the path to your .ttc or .ttf font file
