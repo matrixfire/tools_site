@@ -34,9 +34,12 @@ INSTALLED_APPS = [
     'learning_logs',
     'accounts',
     'core',
+    'todo',
+    'api',
 
     # Third party apps.
     'django_bootstrap5',
+    'rest_framework',
 
     # Default django apps.
     'django.contrib.admin',
