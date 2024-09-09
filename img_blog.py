@@ -214,3 +214,96 @@ def main():
     )
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+from PIL import Image
+from matplotlib import font_manager
+import textwrap
+import random
+
+def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_size=50, color='black'):
+    """
+    Adds four Chinese texts to the corners of an image and saves the new image.
+
+    Args:
+        image_path (str): Path to the base image.
+        output_path (str): Path to save the image with added texts.
+        texts (list): List of four Chinese texts to add to the corners.
+        font_path (str): Path to the font file that supports Chinese characters.
+        font_size (int): Font size of the text.
+        color (str): Color of the text.
+    """
+    # Load the image
+    img = Image.open(image_path)
+    img_width, img_height = img.size
+    
+    # Create a figure and axis
+    fig, ax = plt.subplots(figsize=(img_width / 100, img_height / 100), dpi=100)
+    ax.imshow(img)
+    ax.axis('off')  # Turn off the axis
+    
+    # Load the font properties
+    font_prop = font_manager.FontProperties(fname=font_path, size=font_size)
+
+    # Define text positions for the four corners
+    positions = [
+        (0.05, 0.95),  # Top-left
+        (0.95, 0.95),  # Top-right
+        (0.05, 0.05),  # Bottom-left
+        (0.95, 0.05)   # Bottom-right
+    ]
+
+    # Add texts to the four corners
+    for i, (text, pos) in enumerate(zip(texts, positions)):
+        ax.text(
+            pos[0], pos[1], text,
+            fontsize=font_size,
+            color=color,
+            ha='right' if i % 2 == 1 else 'left',  # Right-align for top-right and bottom-right
+            va='top' if i < 2 else 'bottom',       # Top-align for top texts, bottom-align for bottom texts
+            fontproperties=font_prop,
+            transform=ax.transAxes
+        )
+
+    # Save the modified image
+    plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # Adjust so text doesn't get cut off
+    plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
+    plt.close()
+
+# Example usage
+texts = [
+    "囚徒困境",  # Top-left
+    "公地悲剧",  # Top-right
+    "搭便车问题", # Bottom-left
+    "智猪博弈"   # Bottom-right
+]
+
+add_chinese_texts_to_image(
+    image_path=r"G:\x\微信图片_20240906145338.jpg",  # Replace with the actual path to your image
+    output_path=r"G:\x\output_image.jpg",           # Replace with desired output path
+    texts=texts,
+    font_path=r"msyh.ttc",  # Path to the font file that supports Chinese characters
+    font_size=50,
+    color='black'
+)

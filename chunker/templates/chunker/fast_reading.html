@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faster Reading with Word Chunking</title>
+    <style>
+        .chunk {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faster Reading with Word Chunking</h1>
+    <textarea id="text-input" rows="5" cols="50" placeholder="Enter your text here..."></textarea><br><br>
+    <button id="prev-button">Previous</button>
+    <button id="next-button">Next</button><br><br>
+    <div id="chunk-display"></div>
+
+    <script>
+        let textChunks = [];
+        let currentChunkIndex = 0;
+
+        document.getElementById('next-button').addEventListener('click', function() {
+            if (currentChunkIndex < textChunks.length - 1) {
+                currentChunkIndex++;
+                displayChunk();
+            }
+        });
+
+        document.getElementById('prev-button').addEventListener('click', function() {
+            if (currentChunkIndex > 0) {
+                currentChunkIndex--;
+                displayChunk();
+            }
+        });
+
+        document.getElementById('text-input').addEventListener('input', function() {
+            const text = this.value;
+            fetch('/chunker/chunk/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')  // Include CSRF token if necessary
+                },
+                body: JSON.stringify({ text: text }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                textChunks = data.chunks;
+                currentChunkIndex = 0;
+                displayChunk();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function displayChunk() {
+            const chunkDisplay = document.getElementById('chunk-display');
+            chunkDisplay.innerHTML = `<span class="chunk">${textChunks[currentChunkIndex]}</span>`;
+        }
+
+        // Function to get the CSRF token from cookies
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>
