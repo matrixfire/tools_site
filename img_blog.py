@@ -234,15 +234,32 @@ def main():
 
 
 
-
-
 import matplotlib.pyplot as plt
 from PIL import Image
 from matplotlib import font_manager
 import textwrap
 import random
 
-def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_size=50, color='black'):
+# Define designer_colors list
+designer_colors = [
+    "#FFC5A6",  # Apricot
+    "#FDAC98",  # Melon
+    "#DC8E90",  # Light Coral
+    "#A97882",  # Mountbatten Pink
+    "#58545F",  # Davy's Gray
+    "#BDE0FE",  # Uranian Blue
+    "#FFC8DD",  # Fairy Tale
+    "#FFAFCC",  # Carnation Pink
+    "#D8F7F2",  # Mint Green
+    "#CDB4DB",  # Thistle
+    "#0033A0",  # Classic Blue
+    "#FF6F61",  # Coral
+    "#50C878",  # Emerald
+    "#40E0D0",  # Turquoise
+    "#36454F",  # Charcoal
+]
+
+def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_size=50, color='black', random_colors=False):
     """
     Adds four Chinese texts to the corners of an image and saves the new image.
 
@@ -252,7 +269,8 @@ def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_s
         texts (list): List of four Chinese texts to add to the corners.
         font_path (str): Path to the font file that supports Chinese characters.
         font_size (int): Font size of the text.
-        color (str): Color of the text.
+        color (str): Color of the text (used when random_colors is False).
+        random_colors (bool): If True, use random colors for each text.
     """
     # Load the image
     img = Image.open(image_path)
@@ -276,10 +294,11 @@ def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_s
 
     # Add texts to the four corners
     for i, (text, pos) in enumerate(zip(texts, positions)):
+        text_color = random.choice(designer_colors) if random_colors else color
         ax.text(
             pos[0], pos[1], text,
             fontsize=font_size,
-            color=color,
+            color=text_color,
             ha='right' if i % 2 == 1 else 'left',  # Right-align for top-right and bottom-right
             va='top' if i < 2 else 'bottom',       # Top-align for top texts, bottom-align for bottom texts
             fontproperties=font_prop,
@@ -293,17 +312,18 @@ def add_chinese_texts_to_image(image_path, output_path, texts, font_path, font_s
 
 # Example usage
 texts = [
-    "囚徒困境",  # Top-left
-    "公地悲剧",  # Top-right
-    "搭便车问题", # Bottom-left
-    "智猪博弈"   # Bottom-right
+    "我只他妈的想找个游戏玩！",  # Top-left
+    "请别对我有任何指望",  # Top-right
+    "运气十分糟糕", # Bottom-left
+    "请给我一次机会好吗？"   # Bottom-right
 ]
 
 add_chinese_texts_to_image(
-    image_path=r"G:\x\微信图片_20240906145338.jpg",  # Replace with the actual path to your image
-    output_path=r"G:\x\output_image.jpg",           # Replace with desired output path
+    image_path=r"C:\Users\34950\Desktop\work\tools_site\t.jpg",  # Replace with the actual path to your image
+    output_path=r"C:\Users\34950\Desktop\work\tools_site\\output_image.jpg",           # Replace with desired output path
     texts=texts,
     font_path=r"msyh.ttc",  # Path to the font file that supports Chinese characters
-    font_size=50,
-    color='black'
+    font_size=30,
+    color='black',
+
 )
